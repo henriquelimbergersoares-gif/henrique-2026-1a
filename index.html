@@ -2,10 +2,509 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Marimba</title>
 </head>
 <body>
-    <h1>marimba</h1>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto de Lei nº 1/2026 - Proteção Animal | Câmara Municipal de Cascavel</title>
+  <style>
+    :root {
+      --primary: #1b1f5e;
+      --primary-light: #2e7d32;
+      --primary-bg: #e8f5e9;
+      --secondary: #0d47a1;
+      --alert-bg: #fff8e1;
+      --alert-border: #ffb300;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --bg-page: #f3f4f6;
+      --bg-card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, #144318 100%);
+      color: #ffffff;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 5px solid var(--alert-border);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+
+    .ementa {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: #e8f5e9;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1.25rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--alert-border);
+      text-align: left;
+    }
+
+    /* Navegação */
+    nav {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-container {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0.75rem 1.5rem;
+      gap: 0.75rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn-print {
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-print:hover {
+      background-color: var(--primary-light);
+    }
+
+    /* Container Principal */
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Cards de Destaque */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .highlight-card {
+      background: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    .highlight-card h3 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Seções do Documento */
+    .doc-section {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2rem;
+    }
+
+    .doc-intro {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    .chapter-title {
+      background-color: var(--primary-bg);
+      color: var(--primary);
+      padding: 0.75rem 1rem;
+      border-left: 4px solid var(--primary);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 2rem 0 1.5rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .artigo {
+      margin-bottom: 1.5rem;
+    }
+
+    .artigo p {
+      margin-bottom: 0.75rem;
+      text-align: justify;
+    }
+
+    .artigo strong.art-num {
+      color: var(--primary);
+    }
+
+    .incisos {
+      list-style: none;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .incisos li {
+      margin-bottom: 0.5rem;
+      text-align: justify;
+      position: relative;
+    }
+
+    .paragrafo {
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: #374151;
+    }
+
+    /* Caixa de Denúncia */
+    .denuncia-box {
+      background-color: var(--alert-bg);
+      border: 1px solid var(--alert-border);
+      border-left: 5px solid var(--alert-border);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .denuncia-box h3 {
+      color: #92400e;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Justificativa */
+    #justificativa h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-bg);
+    }
+
+    #justificativa p {
+      margin-bottom: 1.1rem;
+      text-align: justify;
+      text-indent: 2rem;
+    }
+
+    /* Assinatura */
+    .assinatura {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed var(--border);
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .assinatura .linha {
+      margin-top: 2rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #1f2937;
+      color: #d1d5db;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Responsividade e Impressão */
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+      .doc-section {
+        padding: 1.5rem;
+      }
+      .incisos, .paragrafo {
+        padding-left: 0.75rem;
+      }
+    }
+
+    @media print {
+      nav, .btn-print {
+        display: none;
+      }
+      body {
+        background: #fff;
+      }
+      .doc-section {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">Câmara Municipal de Cascavel • Paraná</div>
+    <h1>PROJETO DE LEI Nº 1/2026</h1>
+    <div class="ementa">
+      Dispõe sobre a prevenção e o combate ao abandono e aos maus-tratos contra animais no Município de Cascavel, estabelece penalidades administrativas, medidas de proteção, bem-estar e conscientização, e dá outras providências.
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#disposicoes">Disposições Gerais</a>
+        <a href="#penalidades">Penalidades</a>
+        <a href="#denuncias">Denúncias</a>
+        <a href="#justificativa">Justificativa</a>
+      </div>
+      <button class="btn-print" onclick="window.print()">Imprimir / Salvar PDF</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Resumo dos Pilares -->
+    <section class="highlights" aria-label="Pilares do Projeto">
+      <div class="highlight-card">
+        <h3>Multas Administrativas</h3>
+        <p>Penalidades de <strong>R$ 500,00 a R$ 10.000,00</strong> por animal atingido, aplicadas em dobro em caso de reincidência.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Trinômio de Proteção</h3>
+        <p>Atuação integrada em <strong>Educação Ambiental</strong>, <strong>Controle Populacional</strong> (castração e microchipagem) e <strong>Fiscalização</strong>.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Fundo de Proteção Animal</h3>
+        <p>Recursos arrecadados com multas revertidos diretamente para o bem-estar, resgate e atendimento veterinário.</p>
+      </div>
+    </section>
+
+    <!-- Texto da Lei -->
+    <section id="disposicoes" class="doc-section">
+      <p class="doc-intro">A CÂMARA MUNICIPAL DE CASCAVEL APROVA:</p>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 1º</strong> Fica instituída, no Município de Cascavel, a Política Municipal de Prevenção e Combate ao Abandono e aos Maus-Tratos contra Animais, com o objetivo de promover a proteção, o bem-estar animal, a saúde pública e a guarda responsável de animais domésticos e domesticados.</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 2º</strong> Para os fins desta Lei, considera-se:</p>
+        <ul class="incisos">
+          <li><strong>I – Abandono de animal:</strong> o ato de deixar, sem assistência, proteção ou provimento de necessidades básicas, em local público ou privado, animal sob a responsabilidade, guarda ou propriedade de pessoa física ou jurídica, colocando-o em situação de risco, desamparo ou sofrimento;</li>
+          <li><strong>II – Maus-tratos:</strong> toda e qualquer ação ou omissão, direta ou indireta, que atente contra a integridade física, mental ou comportamental do animal, incluindo privação de alimento, água ou abrigo adequado, agressão física, envenenamento, submissão a trabalhos excessivos, aprisionamento em condições insalubres ou acorrentamento contínuo, mutilação ou falta de assistência veterinária quando necessária.</li>
+        </ul>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 3º</strong> São objetivos desta Lei:</p>
+        <ul class="incisos">
+          <li><strong>I –</strong> Prevenir o abandono e combater ostensivamente os maus-tratos contra animais;</li>
+          <li><strong>II –</strong> Incentivar a guarda responsável e a posse consciente;</li>
+          <li><strong>III –</strong> Promover ações permanentes de educação ambiental e conscientização populacional;</li>
+          <li><strong>IV –</strong> Estimular a adoção responsável de animais abandonados ou resgatados em situação de vulnerabilidade;</li>
+          <li><strong>V –</strong> Reduzir a população de animais em situação de rua por meio de políticas públicas continuadas de controle populacional (castração) e microchipagem;</li>
+          <li><strong>VI –</strong> Incentivar a identificação e o cadastramento no Registro Geral de Animais do Município;</li>
+          <li><strong>VII –</strong> Promover ações educativas sobre a legislação vigente e os deveres dos tutores.</li>
+        </ul>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 4º</strong> O Poder Executivo, por meio dos órgãos competentes, poderá promover campanhas permanentes de conscientização sobre a guarda responsável e o combate aos maus-tratos, especialmente por meio de:</p>
+        <ul class="incisos">
+          <li><strong>I –</strong> Ações educativas na Rede Municipal e Estadual de Ensino, Unidades Básicas de Saúde (UBS) e equipamentos públicos comunitários;</li>
+          <li><strong>II –</strong> Veiculação de campanhas nos canais oficiais de comunicação e imprensa local;</li>
+          <li><strong>III –</strong> Elaboração e distribuição de materiais educativos impressos e digitais;</li>
+          <li><strong>IV –</strong> Apoio e realização de feiras e eventos de adoção responsável no município;</li>
+          <li><strong>V –</strong> Divulgação e incentivo à vacinação, esterilização cirúrgica gratuita ou subsidiada, identificação eletrônica (microchip) e nutrição adequada.</li>
+        </ul>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 5º</strong> O Município de Cascavel poderá celebrar convênios, parcerias, termos de fomento e acordos de cooperação técnica com organizações da sociedade civil (ONGs e protetores independentes), clínicas e hospitais veterinários, instituições de ensino superior, conselhos de classe e empresas do setor privado para o desenvolvimento das ações previstas nesta Lei.</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 6º</strong> O Poder Executivo manterá, fortalecerá ou apoiará programas destinados ao atendimento e resgate de animais em situação de abandono ou vítimas de maus-tratos, observada a disponibilidade orçamentária, incluindo:</p>
+        <ul class="incisos">
+          <li><strong>I –</strong> Atendimento médico-veterinário emergencial e de baixa/alta complexidade;</li>
+          <li><strong>II –</strong> Vacinação, desverminação e controle parasitário;</li>
+          <li><strong>III –</strong> Castração eletiva e controle reprodutivo populacional;</li>
+          <li><strong>IV –</strong> Identificação eletrônica obrigatoriamente vinculada ao tutor/responsável;</li>
+          <li><strong>V –</strong> Acolhimento e abrigamento temporário até a destinação final;</li>
+          <li><strong>VI –</strong> Programas contínuos de feiras de adoção e divulgação, incluindo plataformas digitais.</li>
+        </ul>
+      </article>
+
+      <h2 id="penalidades" class="chapter-title">DAS INFRAÇÕES E DAS PENALIDADES ADMINISTRATIVAS</h2>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 7º</strong> Sem prejuízo das sanções civis e penais cabíveis (em especial a Lei Federal nº 9.605/1998 e a Lei Federal nº 14.064/2020 – Lei Sansão), a prática de atos de abandono ou maus-tratos a animais sujeitará o infrator, pessoa física ou jurídica, às seguintes sanções administrativas:</p>
+        <ul class="incisos">
+          <li><strong>I – Advertência por escrito:</strong> aplicável na primeira infração de menor gravidade, quando não forem constatadas lesões graves, mutilações ou risco iminente de morte, acompanhada de notificação para regularização da situação no prazo estabelecido pelo agente fiscalizador;</li>
+          <li><strong>II – Prestação de serviços à comunidade:</strong> realização de atividades junto ao setor municipal de bem-estar animal ou entidades protetoras conveniadas, conforme determinação da autoridade administrativa, respeitada a capacidade física do infrator e a proporcionalidade da medida;</li>
+          <li><strong>III – Multa administrativa:</strong> fixada no valor de R$ 500,00 (quinhentos reais) a R$ 10.000,00 (dez mil reais) por animal atingido, gradualmente dosada segundo a gravidade do fato, os antecedentes e a capacidade econômica do infrator;</li>
+          <li><strong>IV – Perda da guarda, posse ou propriedade do animal:</strong> imposta nas hipóteses de infração grave, reincidência ou quando o animal se encontrar em situação de perigo iminente à vida ou integridade física;</li>
+          <li><strong>V – Apreensão de instrumentos, apetrechos ou veículos:</strong> comprovadamente utilizados para a prática ou facilitação do ato de abandono ou maus-tratos;</li>
+          <li><strong>VI – Proibição temporária ou definitiva de adotar ou reter a guarda de novos animais:</strong> pelo período de até 5 (cinco) anos;</li>
+          <li><strong>VII – Ressarcimento integral de despesas:</strong> obrigação de arcar com todos os custos decorrentes do resgate, transporte, medicação, cirurgias, internação, alimentação e hospedagem prestados pelo Poder Público ou por entidades e parceiros conveniados.</li>
+        </ul>
+
+        <p class="paragrafo"><strong>§ 1º</strong> Na hipótese de reincidência, a multa será aplicada em dobro.</p>
+        <p class="paragrafo"><strong>§ 2º</strong> Caso os maus-tratos ou o abandono resultem na morte ou em mutilação permanente do animal, o valor da multa aplicada será o teto máximo permitido (10 mil reais).</p>
+        <p class="paragrafo"><strong>§ 3º</strong> Os valores das multas serão atualizados anualmente pelo índice oficial adotado pelo Município de Cascavel (FMC ou IPCA).</p>
+        <p class="paragrafo"><strong>§ 4º</strong> Os recursos arrecadados com a aplicação das multas previstas neste artigo serão destinados prioritariamente a um Fundo Municipal de Proteção Animal a ser criado, ou à conta vinculada ao programa municipal de bem-estar e controle populacional animal.</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 8º</strong> A aplicação de qualquer penalidade administrativa prevista nesta Lei observará obrigatoriamente o devido processo legal, assegurados o contraditório e a ampla defesa em âmbito de processo administrativo sanitário/ambiental do Município.</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 9º</strong> A fiscalização do cumprimento desta Lei e a lavratura dos autos de infração ficarão a cargo dos órgãos e agentes municipais competentes no exercício do poder de polícia administrativa, podendo contar com o apoio da Guarda Municipal de Cascavel (GMC), da Patrulha Ambiental, do Setor de Bem-Estar Animal e de forças de segurança estadual (Polícia Militar/BPAmb-FV e Polícia Civil).</p>
+      </article>
+
+      <div id="denuncias" class="denuncia-box">
+        <h3>Canais de Denúncia (Art. 10)</h3>
+        <p>O Município disponibilizará e divulgará canais oficiais para recebimento de denúncias de maus-tratos e abandono, como a <strong>Central de Atendimento ao Cidadão (Telefone 156)</strong>, aplicativo oficial do Município ou canal específico da fiscalização ambiental.</p>
+      </div>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 10.</strong> O Município disponibilizará e divulgará canais oficiais para recebimento de denúncias de maus-tratos e abandono, como a Central de Atendimento ao Cidadão (156), aplicativo oficial do Município ou canal específico da fiscalização ambiental.</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 11.</strong> Constatados indícios da prática de crime previsto na legislação federal, o órgão fiscalizador municipal encaminhará imediatamente a cópia do auto de infração e os relatórios técnicos e veterinários à Delegacia de Polícia Civil de Cascavel e ao Ministério Público do Estado do Paraná (MPPR).</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 12.</strong> O Poder Executivo regulamentará a presente Lei no que couber, estabelecendo os critérios objetivos para gradação de multas e fluxos operacionais de fiscalização.</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 13.</strong> As despesas decorrentes da execução desta Lei correrão por conta das dotações orçamentárias próprias do Município, suplementadas se necessário.</p>
+      </article>
+
+      <article class="artigo">
+        <p><strong class="art-num">Art. 14.</strong> Esta Lei entra em vigor na data de sua publicação.</p>
+      </article>
+
+      <div class="assinatura">
+        <p>Sala das Sessões, ___ de __________ de 2026.</p>
+        <p class="linha">Vereador(a) ___________________<br>Câmara Municipal de Cascavel</p>
+      </div>
+    </section>
+
+    <!-- Justificativa -->
+    <section id="justificativa" class="doc-section">
+      <h2>JUSTIFICATIVA</h2>
+
+      <p>O abandono e os maus-tratos contra animais representam graves problemas que afetam diretamente a saúde pública, a segurança urbana, a zoonose e o equilíbrio ambiental. Em Cascavel, polo econômico e educacional do Oeste do Paraná com mais de 350 mil habitantes, o crescimento urbano acelerado veio acompanhado de um aumento expressivo no número de animais domésticos sob supervisão, mas também na sobrecarga de demandas ligadas à vulnerabilidade animal.</p>
+
+      <p>Anualmente, centenas de cães e gatos são deixados à própria sorte em bairros periféricos, distritos agrícolas (como São João, Sede Alvorada e Juvinópolis), às margens de rodovias de grande circulação (como a BR-277 e BR-369) e em áreas de preservação ambiental da cidade (como a região do Lago Municipal e parques urbanos). Esses animais ficam expostos à fome, a atropelamentos, a doenças transmissíveis aos seres humanos (zoonoses como a raiva e a leishmaniose) e ao sofrimento severo decorrente de agressões físicas, privação de alimentos e acorrentamento inadequado.</p>
+
+      <p>No caso do Distrito de Juvinópolis especificamente, o agravante é a circulação de cães abandonados no espaço escolar e na quadra esportiva utilizada pelos alunos, podendo ocasionar desde doenças até mordedura por parte dos mesmos nos alunos que ali estudam; ainda o número elevado desses animais nas ruas do distrito podem causar acidentes pois os mesmos correm atrás de motoqueiros e bicicleteiros, evidenciando a necessidade de que sejam tomadas medidas urgentes para sanar tais problemas.</p>
+
+      <p>A rede de proteção animal em Cascavel — formada por ONGs locais, protetores independentes e clínicas voluntárias — atua frequentemente no limite de sua capacidade financeira e estrutural para suprir a demanda de resgates. Embora a legislação federal traga penalidades criminais (Lei Federal nº 9.605/1998 com redação dada pela Lei Federal nº 14.064/2020), a resposta penal muitas vezes é demorada e prescinde do poder de polícia administrativa direta do Município para agir de forma rápida no local da ocorrência.</p>
+
+      <p>Este Projeto de Lei vem preencher essa lacuna, instrumentalizando os fiscais municipais e a Guarda Municipal de Cascavel com poderes sancionatórios administrativos claros: aplicação imediata de advertências, multas coercitivas, obrigação de ressarcimento de despesas de tratamento e apreensão preventiva dos animais em risco.</p>
+
+      <p>Além disso, a proposição estabelece o fortalecimento do trinômio essencial para o bem-estar animal em Cascavel: Educação Científica e Ambiental + Controle Populacional (Castração e Microchipagem) + Fiscalização Administrativa.</p>
+
+      <p>Ao punir administrativamente com rigor quem abandona e maltrata, e ao reverter os recursos arrecadados para as políticas de castração e atendimento médico comunitário, o Município de Cascavel dará um passo decisivo no fortalecimento da guarda responsável e no respeito à vida animal.</p>
+
+      <p>Diante da urgência e da relevância social e ambiental da matéria, solicito o apoio dos ilustres pares desta Casa de Leis para a aprovação do presente Projeto de Lei.</p>
+
+      <div class="assinatura">
+        <p>Sala das Sessões, ___ de __________ de 2026.</p>
+        <p class="linha">Vereador(a) ________________________<br>Câmara Municipal de Cascavel</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Projeto de Lei nº 1/2026 — Câmara Municipal de Cascavel/PR</strong></p>
+    <p>Política Municipal de Prevenção e Combate ao Abandono e aos Maus-Tratos contra Animais</p>
+  </footer>
+</body>
+</html> </p>
 </body>
 </html>
